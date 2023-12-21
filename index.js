@@ -7,7 +7,7 @@ const createWindow = async () => {
 
     // Show mini popup
     const miniloader = new BrowserWindow({
-        title: "Bus App - Loading...",
+        title: "TransitSync - Loading...",
         maximizable: false,
         show: false,
         width: 400,
@@ -25,7 +25,7 @@ const createWindow = async () => {
     catch (errorror) {
         await dialog.showMessageBox(miniloader, {
             title: "Couldn't connect to Arriva",
-            message: "This Bus App could not connect to the Arriva servers. \nDouble check your internet connection, internet access and firewall before trying again!",
+            message: "TransitSync could not connect to the Arriva servers. \nDouble check your internet connection, internet access and firewall before trying again!",
             icon: "./public/images/busIcon.png"
         })
 
@@ -34,7 +34,7 @@ const createWindow = async () => {
     }
     await sleep(1000)
     win = new BrowserWindow({
-        title: "Bus App",
+        title: "TransitSync",
         maximizable: true,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
